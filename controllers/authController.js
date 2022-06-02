@@ -1,12 +1,12 @@
 const User = require("../models/users");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 const authController = {
     ////reg
     registerUser : async (req,res,next) => {
         try {
-        //   const salt = await bcrypt.genSaltSync(10);
-        //   const hashed = await bcrypt.hashSync(`${req.body.password}`, salt);
+          const salt = await bcrypt.genSaltSync(10);
+          const hashed = await bcrypt.hashSync(`${req.body.password}`, salt);
 
             const newUser = await new User({
                   username: req.body.username,
@@ -18,9 +18,9 @@ const authController = {
         } catch (err) {
             res.status(500).json({"status":500,"msg":"Register New Users Fails","data":err})
         }
-    }
+    },
 
-
+   
 }
 
 module.exports = authController;
