@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const { xss } = require('express-xss-sanitizer');
-const bcrypt = require("bcrypt");
 const dotenv = require("dotenv").config();
 const Account = require("./models/users");
 const authRouter = require("./routers/auth");
