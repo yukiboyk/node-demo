@@ -7,7 +7,7 @@ const dotenv = require("dotenv").config();
 const Account = require("./models/users");
 const authRouter = require("./routers/auth");
 const databaseDB = require("./core/config");
-const port = process.env.PORT || 1997;
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set(express.static("/views"));
