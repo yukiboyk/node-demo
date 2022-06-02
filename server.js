@@ -6,16 +6,20 @@ const dotenv = require("dotenv").config();
 const Account = require("./models/users");
 const authRouter = require("./routers/auth");
 const databaseDB = require("./core/config");
+const port = process.env.PORT || 1997;
+app.use(cors({  
+   origin: '*',
+   optionsSuccessStatus: 200
+}));
 
-app.use(cors());
 app.use(express.json());
 
 app.get ("/", function(req,res) {
-    res.send("HELLO CAC BAN")
+    res.send("HELLO CAC BAN nhe")
 });
 ///Router
 app.use("/v1/auth",xss(), authRouter);
 
-app.listen(process.env.PORT || 3000, () => {
- console.log(`Sever Running On The port: ${process.env.PORT}`);
+app.listen(port, () => {
+ console.log(`Sever Running On The port: ${port}`);
 });
