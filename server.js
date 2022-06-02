@@ -10,10 +10,12 @@ const databaseDB = require("./core/config");
 app.use(cors());
 app.use(express.json());
 
-
+app.get ("/", function(req,res) {
+    res.send("HELLO CAC BAN")
+});
 ///Router
 app.use("/v1/auth",xss(), authRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
  console.log(`Sever Running On The port: ${process.env.PORT}`);
 });
