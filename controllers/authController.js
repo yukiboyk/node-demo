@@ -1,12 +1,12 @@
 const User = require("../models/users");
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 const authController = {
     ////reg
     registerUser : async (req,res) => {
         try {
-          const salt = await bcrypt.genSaltSync(10);
-          const hashed = await bcrypt.hashSync(`${req.body.password}`, salt);
+        //   const salt = await bcrypt.genSaltSync(10);
+        //   const hashed = await bcrypt.hashSync(`${req.body.password}`, salt);
 
             const newUser = await new User({
                   username: req.body.username,
